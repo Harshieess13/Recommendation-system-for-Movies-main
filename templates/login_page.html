@@ -1,0 +1,82 @@
+{% load static %}
+<html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+            body{/* Created with https://www.css-gradient.com */
+background: #F8F2F3;
+background: -webkit-linear-gradient(top left, #F8F2F3, #E6F881);
+background: -moz-linear-gradient(top left, #F8F2F3, #E6F881);
+background: linear-gradient(to bottom right, #F8F2F3, #E6F881);
+                
+                background-color: white;
+            }
+            button{
+                background-color: #4CAF50;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=password],input[type=text]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 20%;
+                border-radius: 50%;
+            }  
+        </style>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <center><h1>Login Form</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="{% static 'avatar_img1.png' %}" alt="Avatar" class="avatar">
+                </div>
+                <label for ='username'><b>Username:  </b></label>
+                <input type="text" placeholder="Enter username" name="username" float="right"  required><br>  
+                <label for='password'><b>Password : </b></label>
+                <input type="password" placeholder="Enter Password" name="password" required><br>  
+                <button type="submit"><b>Login</b></button><br>     
+                Don't have accounct- <a href="http://localhost:8000/signup/"> register </a>
+                / Are you admin- <a href="http://localhost:8000/admin/"> Admin Login </a>
+            </div></center>
+        </form>
+    </body>
+</html>

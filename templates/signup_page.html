@@ -1,0 +1,179 @@
+{% load static %}
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            button{
+                background-color: #4CAF50;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=text]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            input[type=checkbox]{
+                height: 18px;
+                width: 18px;
+                /* align:centre; */
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .description{
+                padding : 50px;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 10%;
+                border-radius: 50%;
+            } 
+            fieldset
+            {
+            background-color:rgb(19, 231, 104);
+            max-width:500px;
+            padding:16px;	
+            }
+            .legend
+            {
+            background-color: black;
+            text-emphasis-color: white;
+            font-size: medium;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom:10px;
+            margin-left:16px;
+            }
+            label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+input {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+            
+
+            
+        </style>
+    </head>
+    <body>
+        <centre><h1>Register From</h1></centre>
+        <form action="#" method="post">
+            {% csrf_token %}
+            
+            <centre><div class="container">
+                <div class="imgcontainer">
+                    <img src="{% static 'avatar_img1.png' %}" alt="Avatar" class="avatar">
+                </div>
+                <label for='username'><b>Username : </b></label>
+		        <input type='text' placeholder="Enter your unique username" name='username' required><br>
+                <label for='first_name'><b>First Name : </b></label>
+		        <input type='text' placeholder="Enter your first name" name='first_name' required><br>
+		        <label for='last_name'><b>Last Name :</b></label>
+		        <input type='text' placeholder='Enter your last name' name='last_name' required><br>  
+            	<label for='password'><b>Password : </b></label>
+            	<input type="text" placeholder="Enter Password" name="password" required><br>
+                    <fieldset>
+
+                    <h1> <legend>Select genre you like</legend></h1>
+                   
+                    <label ><input type="checkbox" name="genre" value="action" checked>action</label><br />
+                    <label ><input type="checkbox" name="genre" value="adventure">adventure</label><br />
+                    <label ><input type="checkbox" name="genre" value="romantic">romantic</label><br />
+                    <label ><input type="checkbox" name="genre" value="horror">horror</label><br />
+                    <label ><input type="checkbox" name="genre" value="mystry">mystry</label><br />
+                    <label ><input type="checkbox" name="genre" value="scifi">scifi</label><br />
+                    <label ><input type="checkbox" name="genre" value="comedy">comedy</label><br />
+                    </fieldset>
+
+                    <h1>  <legend>Production house</legend></h1>
+                   
+                    <label ><input type="checkbox" name="roduction house" value="TwentiethCenturyFoxFilmCorporation" checked>Twentieth Century Fox Film Corporation</label><br />
+                    <label ><input type="checkbox" name="roduction house" value="WaltDisneyPictures">Walt Disney Pictures</label><br />
+                    <label ><input type="checkbox" name="roduction house" value="WarnerBros">Warner Bros</label><br />
+                    <label ><input type="checkbox" name="roduction house" value="DCEntertainment">DC Entertainment</label><br />
+                    <label ><input type="checkbox" name="roduction house" value="MarvelStudios">Marvel Entertainment</label><br />
+                    <label ><input type="checkbox" name="roduction house" value="LegendaryPictures">Legendary Pictures</label><br />
+                    <label ><input type="checkbox" name="roduction house" value="ParamountPictures">Paramount Pictures</label><br />
+
+                    </fieldset>
+                    <h1>  <legend>Director</legend></h1>
+                   
+                    <label ><input type="checkbox" name="Director" value="JamesCameron" checked>James Cameron</label><br />
+                    <label ><input type="checkbox" name="Director" value="ChristopherNolan">Christopher Nolan</label><br />
+                    <label ><input type="checkbox" name="Director" value="AndrewStanton">Andrew Stanton</label><br />
+                    <label ><input type="checkbox" name="Director" value="JossWhedon">Joss Whedon</label><br />
+                    <label ><input type="checkbox" name="Director" value="ZackSnyder">Zack Snyder</label><br />
+                    <label ><input type="checkbox" name="Director" value="RussoBrothers">Russo brothers</label><br />
+                    <label ><input type="checkbox" name="Director" value="StevenSpielberg">Steven Spielberg</label><br />
+                </fieldset>
+                   
+                     <h1>  <legend>Cast</legend></h1>
+                   
+                    <label ><input type="checkbox" name="Cast" value="JohnnyDepp" checked>Johnny Depp</label><br />
+                    <label ><input type="checkbox" name="Cast" value="RobertDowneyJr">Robert downey jr</label><br />
+                    <label ><input type="checkbox" name="Cast" value="LeonardoDiCaprio">Leonardo DiCaprio</label><br />
+                    <label ><input type="checkbox" name="Cast" value="TomCruise">Tom Cruise</label><br />
+                    <label ><input type="checkbox" name="Cast" value="MorganFreeman">Morgan Freeman</label><br />
+                    <label ><input type="checkbox" name="Cast" value="DwayneJohnson">Dwayne Johnson</label><br />
+                    <label ><input type="checkbox" name="Cast" value="ChrisHemsworth">Chris Hemsworth</label><br />
+                    <label ><input type="checkbox" name="Cast" value="ChrisEvans">Chris Evans</label><br />
+                    <label ><input type="checkbox" name="Cast" value="WillSmith">Will Smith</label><br />
+                    <label ><input type="checkbox" name="Cast" value="KeanuReeves">Keanu Reeves</label><br />
+                    <label ><input type="checkbox" name="Cast" value="BruceWillis">Bruce Willis</label><br />
+                    <label ><input type="checkbox" name="Cast" value="MarkWahlberg">Mark Wahlberg</label><br />
+                    <label ><input type="checkbox" name="Cast" value="JackieChan">Jackie Chan</label><br />
+                    <label ><input type="checkbox" name="Cast" value="AdamSandler">Adam Sandler</label><br />
+                    <label ><input type="checkbox" name="Cast" value="BradPitt">Brad Pitt</label><br />
+                    <label ><input type="checkbox" name="Cast" value="NicolasCage">Nicolas Cage</label><br />
+
+                    
+                    </fieldset>
+                <div class="description">
+                Write actor/director/production_house name that you like seprated by commas: 
+                <br />
+                     
+                <textarea rows = "5" cols = "50" name = "description" ></textarea>
+                </div>
+            	<button type="submit"><b>Signup</b></button><br>
+                Already an accounct <a href="http://localhost:8000/"> Login </a>
+                
+            </div></centre>
+        </form>
+    </body>
+</html>
